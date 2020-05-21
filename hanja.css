@@ -1,0 +1,140 @@
+body, ol {
+	margin: 0;
+}
+
+
+nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 9;
+}
+
+nav > * {
+	background-color: white;
+	border-radius: 5px;
+	box-sizing: content-box;
+	box-shadow: 0 3px 6px gray;
+}
+
+nav > button {
+	position: absolute;
+	border: none;
+	top: 10px;
+	right: 10px;
+	width: 40px;
+	height: 30px;
+	padding: 5px;
+}
+
+nav > button:hover {
+	background-color: lightgray;
+}
+
+#real-index {
+	position: relative;
+	top: 60px;
+	right: 10px;
+	height: 80vh;
+	padding: 10px;
+	overflow: hidden;
+}
+
+#real-index.hidden {
+	display: none;
+}
+
+#real-index > ol {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+#real-index a {
+	color: #007BFF;
+}
+
+#real-index li {
+	transition-property: background-color;
+}
+#real-index li:hover {
+	background-color: #c1dfff;
+}
+
+main {
+	font-family: '한양해서', serif;
+}
+
+
+
+.row {
+	position: relative;
+	padding: 32px 10% 32px calc(60px + 10%);
+	transition-property: background-color;
+}
+
+.row:hover {
+	
+	background-color: #e9e7db;
+}
+
+.row::before {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 32px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 60px;
+	content: attr(id);
+}
+
+.word {
+	font-size: 24px;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-evenly;
+}
+
+.word:target {
+	background-color: yellow;
+}
+
+.word i {
+	position: relative;
+	font-size: 72px;
+	font-style: normal;
+	cursor: pointer;
+	transition-property: color, background-color;
+}
+
+.word i:hover {
+	color: rgb(133, 53, 16);
+}
+
+.word i::after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	content: attr(rt);
+	font-size: 16px;
+	text-align: center;
+	word-break: keep-all;
+	white-space: nowrap;
+}
+
+.row, .word i, li, nav > button {
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+}
+
+
+.description {
+	font-size: 24px;
+	padding-top: 48px;
+	opacity: 0.75;
+	font-style: italic;
+}
